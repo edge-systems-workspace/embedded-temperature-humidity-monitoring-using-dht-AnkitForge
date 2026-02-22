@@ -16,3 +16,8 @@
 #define DHTTYPE DHT11
 
 DHT dht(DHTPIN,DHT11);
+void setup(){
+    Serial.begin(9600);
+    dht.begin();
+}
+
