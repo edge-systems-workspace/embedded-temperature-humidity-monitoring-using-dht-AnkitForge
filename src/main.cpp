@@ -11,3 +11,8 @@
  * Students must complete the TODO sections.
  */
 
+#include <DHT.h>
+#define DHTPIN 2
+#define DHTTYPE DHT11
+
+DHT dht(DHTPIN,DHT11);
