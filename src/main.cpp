@@ -2,8 +2,8 @@
 /**
  * @file main.ino
  * @brief Embedded Temperature and Humidity Monitoring using DHT11
- * @author YOUR_NAME
- * @date YYYY-MM-DD
+ * @author Ankit Patel
+ * @date 22/02/2026
  *
  * @details
  * This program reads environmental data from the DHT11 sensor
@@ -12,43 +12,29 @@
  */
 
 #include <DHT.h>
+#define DHTPIN 2
+#define DHTTYPE DHT11
 
-// TODO 1:
-// Define the DHT data pin (Use digital pin 2)
-
-// TODO 2:
-// Define the DHT sensor type (DHT11)
-
-// TODO 3:
-// Create a DHT object using the defined pin and sensor type
-
-void setup() {
-
-    // TODO 4:
-    // Initialize Serial communication (9600 baud rate)
-
-    // TODO 5:
-    // Initialize the DHT sensor
-
-    // TODO 6:
-    // Print a system initialization message
+DHT dht(DHTPIN,DHT11);
+void setup(){
+    Serial.begin(9600);
+    dht.begin();
 }
 
 void loop() {
+    float h=dht.readHumidity();
+    float t=dht.readTemperature();
 
-    // TODO 7:
-    // Read humidity value from sensor
+    if (isnan(h)||isnan(t)) {
+        Serial.print("Fialed to rerad form sensor");
+    }
+    Serial.println("Humidity: ");
+    Serial.println(h);
+    Serial.print("% ");
 
-    // TODO 8:
-    // Read temperature value from sensor
+    Serial.println("Temperature : ");
+    Serial.println(t);
+    Serial.println("% ");
 
-    // TODO 9:
-    // Check if either reading failed using isnan()
-    // If failed, print error message and return
 
-    // TODO 10:
-    // Print formatted temperature and humidity values
-
-    // TODO 11:
-    // Add a 2-second delay before next reading
 }
