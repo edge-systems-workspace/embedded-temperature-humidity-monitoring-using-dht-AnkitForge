@@ -21,3 +21,7 @@ void setup(){
     dht.begin();
 }
 
+void loop() {
+    float h=dht.readHumidity();
+    float t=dht.readTemperature();
+
