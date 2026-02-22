@@ -25,3 +25,6 @@ void loop() {
     float h=dht.readHumidity();
     float t=dht.readTemperature();
 
+    if (isnan(h)||isnan(t)) {
+        Serial.print("Fialed to rerad form sensor");
+    }
