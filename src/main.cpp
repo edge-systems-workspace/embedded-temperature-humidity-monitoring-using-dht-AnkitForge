@@ -28,3 +28,13 @@ void loop() {
     if (isnan(h)||isnan(t)) {
         Serial.print("Fialed to rerad form sensor");
     }
+    Serial.println("Humidity: ");
+    Serial.println(h);
+    Serial.print("% ");
+
+    Serial.println("Temperature : ");
+    Serial.println(t);
+    Serial.println("% ");
+
+
+}
